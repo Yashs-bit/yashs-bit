@@ -1,11 +1,11 @@
 import { SocialLinks } from "@/components/SocialLinks";
-import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { FloatingOrb } from "@/components/FloatingOrb";
 import { Footer } from "@/components/Footer";
 
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <HamburgerMenu />
+      <FloatingOrb />
       <SocialLinks />
       <Footer />
     </div>
