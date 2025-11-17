@@ -1,6 +1,7 @@
 import { Home, Code, Award, Briefcase, MessageSquare } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useSoundEffects } from "@/hooks/useSoundEffects";
+import logo from "@/assets/yash_logo.jpg";
 
 const menuItems = [
   { label: "Home", path: "/", icon: Home },
@@ -25,7 +26,11 @@ export const StickyNav = () => {
             onMouseEnter={playHoverSound}
             onClick={playClickSound}
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent animate-circuit-pulse" />
+            <img 
+              src={logo} 
+              alt="Yash Waje Logo" 
+              className="w-10 h-10 rounded-lg object-cover"
+            />
             <span className="text-xl font-heading font-bold gradient-text">
               Yash Waje
             </span>
