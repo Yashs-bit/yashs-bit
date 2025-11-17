@@ -23,7 +23,7 @@ const socials = [
   {
     name: "Email",
     icon: Mail,
-    url: "mailto:yashwaje9691@gmail.com",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=yashwaje9691@gmail.com",
     color: "text-primary",
   },
 ];
@@ -67,7 +67,9 @@ export const SocialLinks = () => {
         <div className="mt-12 glass p-6 rounded-2xl max-w-md mx-auto">
           <p className="text-sm text-muted-foreground mb-2">Email me directly at:</p>
           <a
-            href="mailto:yashwaje9691@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=yashwaje9691@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-lg font-semibold text-primary hover:text-secondary transition-colors"
           >
             yashwaje9691@gmail.com
