@@ -4,10 +4,10 @@ import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 const projects = [
   {
-    title: "Project Title 1",
-    description: "Brief description of the project and its impact. This will be replaced with your actual project details.",
-    tech: ["IoT", "Arduino", "Sensors"],
-    url: "https://github.com/yourusername/project1", // Add your project link here
+    title: "GSM based gas leakage detector using Arduino",
+    description: "Smart Arduino-based gas safety system using MQ sensors and GSM for instant alerts. Detects LPG, smoke, and air quality, with auto buzzer, exhaust, and safety actions. A compact, reliable, IoT-ready solution for preventing gas-related hazards.",
+    tech: ["Arduino", "GSM", "MQ Sensors", "IoT"],
+    url: "https://github.com/Yashs-bit/GSM-based-gas-leakage-detector-using-Arduino",
   },
   {
     title: "Project Title 2",
