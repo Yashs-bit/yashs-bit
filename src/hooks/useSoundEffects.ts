@@ -21,7 +21,7 @@ export const useSoundEffects = () => {
     oscillator.frequency.value = 400; // Lower, warmer frequency
     oscillator.type = 'sine';
 
-    gainNode.gain.setValueAtTime(0.02, audioContext.currentTime); // Much quieter
+    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime); // Increased volume
     gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.08);
 
     oscillator.start(audioContext.currentTime);
@@ -39,7 +39,7 @@ export const useSoundEffects = () => {
     oscillator.frequency.value = 600; // Softer frequency
     oscillator.type = 'sine'; // Smoother wave
 
-    gainNode.gain.setValueAtTime(0.03, audioContext.currentTime); // Much quieter
+    gainNode.gain.setValueAtTime(0.15, audioContext.currentTime); // Increased volume
     gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
 
     oscillator.start(audioContext.currentTime);
@@ -61,7 +61,7 @@ export const useSoundEffects = () => {
       oscillator.type = 'sine';
 
       const startTime = audioContext.currentTime + (index * 0.08);
-      gainNode.gain.setValueAtTime(0.025, startTime); // Very subtle
+      gainNode.gain.setValueAtTime(0.12, startTime); // Increased volume
       gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
 
       oscillator.start(startTime);
