@@ -1,15 +1,15 @@
+import { Qualifications } from "@/components/Qualifications";
 import { HamburgerMenu } from "@/components/HamburgerMenu";
-import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 
-const Index = () => {
+const QualificationsPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HamburgerMenu />
-      <Hero />
+      <Qualifications />
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default QualificationsPage;

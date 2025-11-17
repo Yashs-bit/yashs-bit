@@ -1,15 +1,15 @@
+import { SocialLinks } from "@/components/SocialLinks";
 import { HamburgerMenu } from "@/components/HamburgerMenu";
-import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 
-const Index = () => {
+const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HamburgerMenu />
-      <Hero />
+      <SocialLinks />
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default ContactPage;
