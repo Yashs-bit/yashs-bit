@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin, Github, Mail } from "lucide-react";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 const socials = [
   {
@@ -29,6 +30,8 @@ const socials = [
 ];
 
 export const SocialLinks = () => {
+  const { playHoverSound, playClickSound } = useSoundEffects();
+  
   return (
     <section id="social" className="py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
@@ -51,6 +54,8 @@ export const SocialLinks = () => {
               style={{
                 animationDelay: `${index * 0.15}s`,
               }}
+              onMouseEnter={playHoverSound}
+              onClick={playClickSound}
             >
               <Button
                 variant="outline"
