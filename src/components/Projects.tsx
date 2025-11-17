@@ -21,12 +21,6 @@ const projects = [
     tech: ["Embedded C", "ESP32", "Cloud"],
     url: "https://github.com/yourusername/project3", // Add your project link here
   },
-  {
-    title: "Project Title 4",
-    description: "Brief description of the project and its impact. This will be replaced with your actual project details.",
-    tech: ["Automation", "C++", "Hardware"],
-    url: "https://github.com/yourusername/project4", // Add your project link here
-  },
 ];
 
 export const Projects = () => {
