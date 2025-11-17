@@ -1,11 +1,11 @@
 import { Projects } from "@/components/Projects";
-import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { FloatingOrb } from "@/components/FloatingOrb";
 import { Footer } from "@/components/Footer";
 
 const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <HamburgerMenu />
+      <FloatingOrb />
       <Projects />
       <Footer />
     </div>
