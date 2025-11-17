@@ -22,16 +22,16 @@ export const StickyNav = () => {
           {/* Logo/Name */}
           <Link 
             to="/" 
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-1.5 sm:gap-2 group"
             onMouseEnter={playHoverSound}
             onClick={playClickSound}
           >
             <img 
               src={logo} 
               alt="Yash Waje Logo" 
-              className="w-10 h-10 rounded-lg object-cover"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-cover"
             />
-            <span className="text-xl font-heading font-bold gradient-text">
+            <span className="text-sm sm:text-xl font-heading font-bold gradient-text">
               Yash Waje
             </span>
           </Link>
