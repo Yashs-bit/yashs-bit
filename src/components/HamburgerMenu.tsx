@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const menuItems = [
-  { label: "Home", href: "#hero" },
-  { label: "Skills", href: "#skills" },
-  { label: "Qualifications", href: "#qualifications" },
-  { label: "Projects", href: "#projects" },
-  { label: "Connect", href: "#social" },
+  { label: "Home", path: "/" },
+  { label: "Skills", path: "/skills" },
+  { label: "Qualifications", path: "/qualifications" },
+  { label: "Projects", path: "/projects" },
+  { label: "Connect", path: "/contact" },
 ];
 
 export const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = () => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -45,16 +45,21 @@ export const HamburgerMenu = () => {
       >
         <nav className="flex flex-col items-start justify-center h-full px-12 space-y-8">
           {menuItems.map((item, index) => (
-            <button
-              key={item.href}
-              onClick={() => handleNavClick(item.href)}
-              className="text-2xl font-semibold text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 glow-hover"
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={handleNavClick}
+              className={`text-2xl font-semibold transition-all duration-300 hover:translate-x-2 glow-hover ${
+                location.pathname === item.path
+                  ? "text-primary"
+                  : "text-foreground hover:text-primary"
+              }`}
               style={{
                 animation: isOpen ? `fade-in 0.5s ease-out ${index * 0.1}s both` : "none",
               }}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </nav>
       </div>

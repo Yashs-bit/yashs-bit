@@ -1,4 +1,7 @@
 import heroBg from "@/assets/hero-bg.jpg";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -26,7 +29,7 @@ export const Hero = () => {
       <div className="absolute bottom-32 left-20 w-2 h-2 rounded-full bg-accent animate-float" style={{ animationDelay: "2s" }} />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center animate-fade-in-up">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-in-up">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 text-glow">
           Yash Waje
         </h1>
@@ -35,20 +38,30 @@ export const Hero = () => {
           Electronics & Computer Engineer
         </h2>
         
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-light italic">
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-light italic max-w-2xl mx-auto">
           Exploring AI, IoT & Smart Embedded Systems with curiosity + creativity.
         </p>
 
-        <div className="max-w-3xl mx-auto text-left md:text-center space-y-4 text-foreground/90 leading-relaxed">
-          <p>
-            Hi, I'm Yash, an Electronics & Computer Engineer passionate about <span className="text-primary font-semibold">Artificial Intelligence</span>, <span className="text-secondary font-semibold">IoT systems</span>, and <span className="text-accent font-semibold">smart embedded solutions</span>.
-          </p>
-          <p>
-            I enjoy building things that blend innovation + real-world impact, whether it's intelligent devices, automation systems, or AI-driven applications.
-          </p>
-          <p>
-            I'm naturally curious, outgoing, and experimental—constantly exploring new tech, solving problems, and pushing myself to understand how things work at the deepest level. Tech, creativity, and forward-thinking engineering? That's my zone. 🚀
-          </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link to="/projects">
+            <Button
+              size="lg"
+              className="glass border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground glow-hover transition-all duration-300 hover:scale-105"
+            >
+              View Projects
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
+          
+          <Link to="/contact">
+            <Button
+              size="lg"
+              variant="outline"
+              className="glass border-2 border-secondary text-secondary hover:bg-secondary/10 glow-hover transition-all duration-300 hover:scale-105"
+            >
+              Get in Touch
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
