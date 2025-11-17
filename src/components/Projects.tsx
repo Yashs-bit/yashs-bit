@@ -7,21 +7,25 @@ const projects = [
     title: "Project Title 1",
     description: "Brief description of the project and its impact. This will be replaced with your actual project details.",
     tech: ["IoT", "Arduino", "Sensors"],
+    url: "https://github.com/yourusername/project1", // Add your project link here
   },
   {
     title: "Project Title 2",
     description: "Brief description of the project and its impact. This will be replaced with your actual project details.",
     tech: ["AI", "Python", "ML"],
+    url: "https://github.com/yourusername/project2", // Add your project link here
   },
   {
     title: "Project Title 3",
     description: "Brief description of the project and its impact. This will be replaced with your actual project details.",
     tech: ["Embedded C", "ESP32", "Cloud"],
+    url: "https://github.com/yourusername/project3", // Add your project link here
   },
   {
     title: "Project Title 4",
     description: "Brief description of the project and its impact. This will be replaced with your actual project details.",
     tech: ["Automation", "C++", "Hardware"],
+    url: "https://github.com/yourusername/project4", // Add your project link here
   },
 ];
 
@@ -67,7 +71,11 @@ export const Projects = () => {
               <Button
                 variant="outline"
                 className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group-hover:glow-primary"
-                onClick={playClickSound}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  playClickSound();
+                  window.open(project.url, '_blank');
+                }}
               >
                 View Project
                 <ExternalLink className="ml-2 w-4 h-4" />
