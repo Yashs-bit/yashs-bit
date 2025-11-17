@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 const projects = [
   {
@@ -25,6 +26,8 @@ const projects = [
 ];
 
 export const Projects = () => {
+  const { playHoverSound, playClickSound } = useSoundEffects();
+  
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -40,6 +43,7 @@ export const Projects = () => {
               style={{
                 animation: `fade-in-up 0.8s ease-out ${index * 0.15}s both`,
               }}
+              onMouseEnter={playHoverSound}
             >
               <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                 {project.title}
@@ -63,6 +67,7 @@ export const Projects = () => {
               <Button
                 variant="outline"
                 className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group-hover:glow-primary"
+                onClick={playClickSound}
               >
                 View Project
                 <ExternalLink className="ml-2 w-4 h-4" />

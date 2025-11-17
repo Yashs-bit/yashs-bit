@@ -1,5 +1,6 @@
 import { Home, Code, Award, Briefcase, MessageSquare } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 const menuItems = [
   { label: "Home", path: "/", icon: Home },
@@ -11,13 +12,19 @@ const menuItems = [
 
 export const StickyNav = () => {
   const location = useLocation();
+  const { playHoverSound, playClickSound } = useSoundEffects();
 
   return (
     <nav className="sticky top-0 z-50 w-full glass border-b border-border/50 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2 group"
+            onMouseEnter={playHoverSound}
+            onClick={playClickSound}
+          >
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent animate-circuit-pulse" />
             <span className="text-xl font-heading font-bold gradient-text">
               Yash Waje
@@ -38,6 +45,8 @@ export const StickyNav = () => {
                       ? "bg-primary/20 text-primary border-b-2 border-primary"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   }`}
+                  onMouseEnter={playHoverSound}
+                  onClick={playClickSound}
                 >
                   <item.icon className="w-4 h-4" />
                   <span className="hidden sm:inline">{item.label}</span>
